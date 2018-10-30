@@ -1,0 +1,32 @@
+{
+  "name": "protractor-supertest",
+  "version": "1.0.0",
+  "description": "e2e with protractor and api test with supertest",
+  "main": "index.js",
+  "scripts": {
+    "test": "protractor protractor.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuliobluz/protractor-supertest.git"
+  },
+  "keywords": [
+    "protractor",
+    "supertest",
+    "api",
+    "javascript"
+  ],
+  "author": "Tulio Luz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tuliobluz/protractor-supertest/issues"
+  },
+  "homepage": "https://github.com/tuliobluz/protractor-supertest#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cucumber": "^4.2.1",
+    "protractor": "5.3.2",
+    "protractor-cucumber-framework": "^5.0.0"
+  }
+}
