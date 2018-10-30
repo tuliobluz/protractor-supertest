@@ -9,7 +9,8 @@ let SamplePage = function () {
         nameField = element(by.id('author')),
         emailField = element(by.id('email')),
         submitBtn = element(by.id('submit')),
-        msgSucessfully = element(by.xpath("//div[@class='comment-body']//p[contains(text(),'" + comment + "')]"));
+        msgSucessfully = element(by.xpath("//div[@class='comment-body']//p[contains(text(),'" + comment + "')]")),
+        msgInvalid = element(by.css('#error-page p strong'));
 
     this.getSamplePage = async function () {
         await browser.get(samplePageData.routes.samplePage);
@@ -41,6 +42,11 @@ let SamplePage = function () {
 
     this.returnPedingMsg = function () {
         return comment;
+    }
+
+    this.getInvalidMsg = function () {
+        browser.wait(EC.elementToBeClickable((msgInvalid)), 15000);
+        return msgInvalid.getText();
     }
 }
 module.exports = new SamplePage();

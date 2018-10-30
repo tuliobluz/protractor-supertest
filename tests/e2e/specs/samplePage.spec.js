@@ -33,3 +33,8 @@ Then('The user should see the successfully message', async function () {
     expect(await samplePage.getSucessfullyMsg())
         .to.equal(samplePage.returnPedingMsg());
 });
+
+Then('The user should see the invalid message', async function () {
+    expect(await samplePage.getInvalidMsg())
+        .to.equal(samplePageData.messages.msgInvalid);
+});
