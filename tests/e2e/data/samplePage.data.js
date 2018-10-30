@@ -5,8 +5,6 @@ module.exports = {
         "samplePage": "/sample-page",
     },
     messages: {
-        "comment": "teste comment",
-        "msgSuccessfully": "",
-        "msgInvalid": "",
+        "msgInvalid": "ERROR\n: please enter a valid email address.",
     }
 };

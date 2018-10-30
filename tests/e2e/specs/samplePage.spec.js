@@ -13,8 +13,8 @@ Given('The user is on Sample Page', async function () {
     await samplePage.getSamplePage();
 });
 
-When('The user fills the comment field', async function (string) {
-    await samplePage.fillEmailField(samplePageData.messages.comment);
+When('The user fills the comment field', async function () {
+    await samplePage.fillCommentField();
 });
 
 When('The user fills the name with {string}', async function (string) {
@@ -27,4 +27,9 @@ When('The user fills the email with {string}', async function (string) {
 
 When('The user submits the form', async function () {
     await samplePage.clickBtnSubmit();
+});
+
+Then('The user should see the successfully message', async function () {
+    expect(await samplePage.getSucessfullyMsg())
+        .to.equal(samplePage.returnPedingMsg());
 });
