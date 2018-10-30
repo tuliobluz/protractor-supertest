@@ -21,7 +21,7 @@ exports.config = {
      * stabilize between tasks.
      */
     allScriptsTimeout: 10000,
-    baseUrl:'https://angularjs.org',
+    baseUrl:'http://store.demoqa.com/',
    /**
      * Test framework to use. This may be one of: jasmine, mocha or custom.
      * Default value is 'jasmine'
