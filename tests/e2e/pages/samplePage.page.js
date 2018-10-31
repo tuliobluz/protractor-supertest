@@ -3,14 +3,16 @@ let faker = require('faker');
 
 let SamplePage = function () {
     var comment = faker.lorem.paragraph();
+    var site = faker.internet.url();
 
     let EC = protractor.ExpectedConditions,
         commentField = element(by.id('comment')),
+        urlField = element(by.id('url')),
         nameField = element(by.id('author')),
         emailField = element(by.id('email')),
         submitBtn = element(by.id('submit')),
         msgSucessfully = element(by.xpath("//div[@class='comment-body']//p[contains(text(),'" + comment + "')]")),
-        msgInvalid = element(by.css('#error-page p strong'));
+        msgError = element(by.css('#error-page > p:nth-child(2)'));
 
     this.getSamplePage = async function () {
         await browser.get(samplePageData.routes.samplePage);
@@ -18,6 +20,11 @@ let SamplePage = function () {
     this.fillCommentField = async function () {
         browser.wait(EC.elementToBeClickable((commentField)), 15000);
         await commentField.sendKeys(comment);
+    };
+
+    this.fillWebSite = async function () {
+        browser.wait(EC.elementToBeClickable((urlField)), 15000);
+        await urlField.sendKeys(site);
     };
 
     this.fillNameField = async function (name) {
@@ -44,9 +51,9 @@ let SamplePage = function () {
         return comment;
     }
 
-    this.getInvalidMsg = function () {
-        browser.wait(EC.elementToBeClickable((msgInvalid)), 15000);
-        return msgInvalid.getText();
+    this.getMsgError = function () {
+        browser.wait(EC.elementToBeClickable((msgError)), 15000);
+        return msgError.getText();
     }
 }
 module.exports = new SamplePage();
