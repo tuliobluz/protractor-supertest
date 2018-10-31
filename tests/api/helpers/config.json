@@ -1,3 +1,4 @@
 {
-    "URLNameCity": "http://api.openweathermap.org/data/2.5/weather?q=London&"
+    "URLNameCity": "http://api.openweathermap.org/data/2.5/weather?q=London&",
+    "URLNameCityInvalid": "http://api.openweathermap.org/data/2.5/weather?q=Londan&"
 }

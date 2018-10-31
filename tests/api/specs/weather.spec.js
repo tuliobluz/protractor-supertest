@@ -32,4 +32,17 @@ describe("/GET", function () {
                 done();
             });
     });
+
+    it("404 - Unauthorized to get city", function (done) {
+        server = supertest.agent(config.URLNameCityInvalid);
+        server
+            .get(config.URLNameCity + utils.apiID.id)
+            .expect("Content-type", /json/)
+            .end(function (err, res) {
+                res.status.should.equal(404);
+                res.body.cod.should.equal(bodies.notFound.cod);
+                res.body.message.should.equal(bodies.notFound.message);
+                done();
+            });
+    });
 });
