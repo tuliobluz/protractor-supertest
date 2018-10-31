@@ -42,3 +42,5 @@ If you want to run the tests in your computer and Headless, you just need to set
 - In the file ```protractor.conf.js``` add this code to your browser
 
 ```chromeOptions: { args: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-extensions', '--disable-dev-shm-usage', '--window-size=1600,1020']}```
+
+- After added this args, just run the test ```protractor protractor.conf.js```
