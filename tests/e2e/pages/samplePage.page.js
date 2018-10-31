@@ -11,6 +11,8 @@ let SamplePage = function () {
         nameField = element(by.id('author')),
         emailField = element(by.id('email')),
         submitBtn = element(by.id('submit')),
+        backBtn = element(by.css('a[href*="javascript:history.back()"]')),
+        titleComment = element(by.id('reply-title')),
         msgSucessfully = element(by.xpath("//div[@class='comment-body']//p[contains(text(),'" + comment + "')]")),
         msgError = element(by.css('#error-page > p:nth-child(2)'));
 
@@ -42,9 +44,19 @@ let SamplePage = function () {
         await submitBtn.click();
     };
 
+    this.clickBack = async function () {
+        browser.wait(EC.elementToBeClickable((backBtn)), 15000);
+        await backBtn.click();
+    };
+
     this.getSucessfullyMsg = function () {
         browser.wait(EC.elementToBeClickable((msgSucessfully)), 15000);
         return msgSucessfully.getText();
+    }
+
+    this.getTitledComment = function () {
+        browser.wait(EC.elementToBeClickable((titleComment)), 15000);
+        return titleComment.getText();
     }
 
     this.returnPedingMsg = function () {

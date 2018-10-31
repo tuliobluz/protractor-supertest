@@ -30,9 +30,19 @@ When('The user submits the form', async function () {
     await samplePage.clickBtnSubmit();
 });
 
+
+When('The user goes back', async function () {
+    await samplePage.clickBack();
+});
+
 Then('The user should see the successful message', async function () {
     expect(await samplePage.getSucessfullyMsg())
         .to.equal(samplePage.returnPedingMsg());
+});
+
+Then('The user should see the Sample Page', async function () {
+    expect(await samplePage.getTitledComment())
+        .to.equal(samplePageData.text.titleComment);
 });
 
 Then('The user should see the invalid email', async function () {

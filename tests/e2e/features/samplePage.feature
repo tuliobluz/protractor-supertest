@@ -15,6 +15,18 @@ Feature: The user accesses the Sample Page
             | name           | email               |
             | Teste Engineer | apptester@email.com |
 
+    Scenario Outline: The user goes back to Sample Page
+        When The user fills some fields
+        And The user fills the name with '<name>'
+        And The user fills the email with '<email>'
+        And The user submits the form
+        And The user goes back
+        Then The user should see the Sample Page
+
+        Examples:
+            | name           | email              |
+            | Teste Engineer | apptesteremail.com |
+
     Scenario Outline: The user tries to send a comment with an invalid email
         When The user fills some fields
         And The user fills the name with '<name>'
