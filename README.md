@@ -63,11 +63,8 @@ If you want to run the tests in your computer and Headless, you just need to set
 ### Folders Structures
 
 * ```api ```
-    * ```bodies ``` Where the bodies that it will use in the test should be created
-        * ```.data.js ```
     * ```helpers ``` Where the helpers files should be created
-        * ```.feature ```
     * ```specs ``` Where the specification of tests should be created
-        * ```.page.js ```
+        * ```.specs.js ```
 
 ### Running tests
