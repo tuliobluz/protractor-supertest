@@ -6,7 +6,8 @@
   "scripts": {
     "webdriver-update": "webdriver-manager update",
     "webdriver-start": "webdriver-manager start",
-    "e2e": "protractor protractor.conf.js"
+    "e2e": "protractor protractor.conf.js",
+    "api-test": "mocha ./tests/api/specs/*.spec.js"
   },
   "repository": {
     "type": "git",
