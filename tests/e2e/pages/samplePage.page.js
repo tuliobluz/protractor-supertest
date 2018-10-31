@@ -1,4 +1,4 @@
-let samplePageData = require('../data/samplePage.data.js');
+let samplePageData = require('../utils/samplePage.data.js');
 let faker = require('faker');
 
 let SamplePage = function () {

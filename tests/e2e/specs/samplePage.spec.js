@@ -1,5 +1,5 @@
 let samplePage = require('../pages/samplePage.page.js');
-let samplePageData = require('../data/samplePage.data.js');
+let samplePageData = require('../utils/samplePage.data.js');
 
 let chai = require('chai');
 let chaiAsPromised = require('chai-as-promised');

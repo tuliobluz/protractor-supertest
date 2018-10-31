@@ -1,5 +1,4 @@
-Working in progress
-
+## Working in progress
 ### Technologies used
 
 I used the technologies below:
@@ -17,12 +16,14 @@ I used the technologies below:
 
 - Run ```npm install``` to install dependencies
 
+## e2e
+
 - Run ```npm run webdriver-update``` to install//update the binaries drivers
 
 ### Folders Structures
 
 * ```e2e ```
-    * ```data ``` It is to use to manage the data this way you can reuse the data in your testshere feature files should be created
+    * ```utils ``` It is to use to manage the data this way you can reuse the data in your testshere feature files should be created
         * ```samplePage.data.js ```
     * ```features ``` Where feature files should be created
         * ```samplePage.feature ```
@@ -47,3 +48,5 @@ If you want to run the tests in your computer and Headless, you just need to set
 ```chromeOptions: { args: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-extensions', '--disable-dev-shm-usage', '--window-size=1600,1020']}```
 
 - After adding this args, just run the test ```npm run e2e```
+
+## API

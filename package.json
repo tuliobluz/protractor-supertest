@@ -7,7 +7,6 @@
     "webdriver-update": "webdriver-manager update",
     "webdriver-start": "webdriver-manager start",
     "e2e": "protractor protractor.conf.js"
-
   },
   "repository": {
     "type": "git",
@@ -31,6 +30,9 @@
     "cucumber": "^4.2.1",
     "faker": "^4.1.0",
     "protractor": "^5.4.1",
-    "protractor-cucumber-framework": "^5.0.0"
+    "protractor-cucumber-framework": "^5.0.0",
+    "mocha": "^5.2.0",
+    "should": "^13.2.3",
+    "supertest": "^3.2.0"
   }
 }
