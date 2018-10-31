@@ -17,9 +17,13 @@ I used the technologies below:
 
 - Run ```npm install``` to install dependencies
 
+- Run ```npm run webdriver-update``` to install//update the binaries drivers
+
 ### Folders Structures
 
 * ```e2e ```
+    * ```data ``` It is to use to manage the data this way you can reuse the data in your testshere feature files should be created
+        * ```samplePage.data.js ```
     * ```features ``` Where feature files should be created
         * ```samplePage.feature ```
     * ```pages ``` Where the page object of tests should be created
@@ -28,19 +32,18 @@ I used the technologies below:
         * ```samplePage.spec.js ```
 ### Running tests
 
-- Start the Selenium Server ```webdriver-manager start```
+- Start the Selenium Server ```npm run webdriver-start```
 
-- Run the tests ```protractor protractor.conf.js```
+- Run the tests ```npm run e2e```
 
-- Just run the tests are done protractor ```protractor protractor.conf.js --cucumberOpts.tags='~@pending'``` without pending scenarios
+- Just run the tests are done protractor ```npm run e2e -- --cucumberOpts.tags='@pending'``` without pending scenarios
 
 ### Headless
 
 If you want to run the tests in your computer and Headless, you just need to set up the following steps:
 
-
 - In the file ```protractor.conf.js``` add this code to your browser
 
 ```chromeOptions: { args: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-extensions', '--disable-dev-shm-usage', '--window-size=1600,1020']}```
 
-- After added this args, just run the test ```protractor protractor.conf.js```
+- After adding this args, just run the test ```npm run e2e```

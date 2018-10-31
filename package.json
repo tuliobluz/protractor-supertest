@@ -4,7 +4,10 @@
   "description": "e2e with protractor and api test with supertest",
   "main": "index.js",
   "scripts": {
-    "test": "protractor protractor.conf.js"
+    "webdriver-update": "webdriver-manager update",
+    "webdriver-start": "webdriver-manager start",
+    "e2e": "protractor protractor.conf.js"
+
   },
   "repository": {
     "type": "git",
