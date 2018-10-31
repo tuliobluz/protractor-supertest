@@ -8,6 +8,9 @@ exports.config = {
     //ignoreSynchronization: true,
 
     browserName: 'chrome',
+    chromeOptions: {
+      args: ['--disable-infobars']
+    },
     /**
      * If this is set to be true, specs will be sharded by file (i.e. all
      * files to be run by this set of capabilities will run in parallel).

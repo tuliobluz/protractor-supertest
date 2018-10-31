@@ -26,3 +26,19 @@ I used the technologies below:
         * ```samplePage.page.js ```
     * ```specs ``` Where the specification of tests should be created
         * ```samplePage.spec.js ```
+### Running tests
+
+- Start the Selenium Server ```webdriver-manager start```
+
+- Run the tests ```protractor protractor.conf.js```
+
+- Just run the tests are done protractor ```protractor protractor.conf.js --cucumberOpts.tags='~@pending'``` without pending scenarios
+
+### Headless
+
+If you want to run the tests in your computer and Headless, you just need to set up the following steps:
+
+
+- In the file ```protractor.conf.js``` add this code to your browser
+
+```chromeOptions: { args: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-extensions', '--disable-dev-shm-usage', '--window-size=1600,1020']}```
