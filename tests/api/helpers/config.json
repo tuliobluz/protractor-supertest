@@ -1,5 +1,5 @@
 {
-    "URLMain": "http://api.openweathermap.org/data/2.5",
+    "URLBase": "http://api.openweathermap.org/data/2.5",
     "URLNameCity": "/weather?q=London&",
     "URLIdCity": "/weather?id=2172797&",
     "URLNameCityInvalid": "/weather?q=Londan&",

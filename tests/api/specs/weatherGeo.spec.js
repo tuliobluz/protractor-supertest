@@ -5,7 +5,7 @@ let utils = require('../helpers/utils.js');
 let bodies = require('../helpers/weather.bodies.js');
 var should = chai.should();
 
-var server = supertest.agent(config.URLMain);
+var server = supertest.agent(config.URLBase);
 
 describe("/GET", function () {
     it("200 - the weather information by Geographic coordinates", function (done) {
