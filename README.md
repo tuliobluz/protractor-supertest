@@ -25,6 +25,8 @@ I used the technologies below:
 
 - Run ```npm install``` to install dependencies
 ## e2e
+
+Store DemoQA: http://store.demoqa.com
 ### Folders Structures
 
 * ```e2e ```
