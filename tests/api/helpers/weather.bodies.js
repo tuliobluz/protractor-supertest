@@ -8,8 +8,17 @@ module.exports = {
         "cod": 401,
         "message": "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info."
     },
-    notFound: {
+    notFoundCity: {
         "cod": "404",
         "message": "city not found"
-    }
+    },
+    geoLocation: {
+        "id": 1851632,
+        "name": "Shuzenji",
+        "cod": 200
+    },
+    badRequestGeo: {
+        "cod": "400",
+        "message": "Nothing to geocode"
+    },
 };

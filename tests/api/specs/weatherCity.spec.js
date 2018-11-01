@@ -48,20 +48,6 @@ describe("/GET", function () {
             });
     });
 
-    it("200 - the weather information to London", function (done) {
-        server = supertest.agent(config.URLNameCity);
-        server
-            .get(config.URLNameCity + utils.apiID.id)
-            .expect("Content-type", /json/)
-            .end(function (err, res) {
-                res.status.should.equal(200);
-                res.body.id.should.equal(bodies.lodonCity.id);
-                res.body.name.should.equal(bodies.lodonCity.name);
-                res.body.cod.should.equal(bodies.lodonCity.cod);
-                done();
-            });
-    });
-
     it("401 - Unauthorized to get city", function (done) {
         server = supertest.agent(config.URLNameCity);
         server
@@ -82,8 +68,8 @@ describe("/GET", function () {
             .expect("Content-type", /json/)
             .end(function (err, res) {
                 res.status.should.equal(404);
-                res.body.cod.should.equal(bodies.notFound.cod);
-                res.body.message.should.equal(bodies.notFound.message);
+                res.body.cod.should.equal(bodies.notFoundCity.cod);
+                res.body.message.should.equal(bodies.notFoundCity.message);
                 done();
             });
     });
