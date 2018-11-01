@@ -1,4 +1,5 @@
-## Working in progress
+## e2e with Protractor and api test with Supertest
+
 ### Technologies used
 
 I used the technologies below:
@@ -60,11 +61,18 @@ If you want to run the tests in your computer and Headless, you just need to set
 
 ## API
 
+Open Weather API: http://openweathermap.org/current
+
 ### Folders Structures
 
 * ```api ```
     * ```helpers ``` Where the helpers files should be created
+        * ```config.json ``` Where the urls should able to use on the tests
+        * ```utils.js ``` Where are created the information to use before the run the tests
+        * ```weather.bodies.js ``` Where are the bodies should be created to use in the tests
     * ```specs ``` Where the specification of tests should be created
-        * ```.specs.js ```
+        * ```weather*.specs.js ```
 
 ### Running tests
+
+- Run the tests ```npm run api-test```
