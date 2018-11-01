@@ -55,7 +55,7 @@ Store DemoQA: http://store.demoqa.com
 
 If you want to run the tests in your computer and Headless, you just need to set up the following steps:
 
-- In the file ```protractor.conf.js``` add this code to your ```browserName: 'chrome',```
+- In the file ```protractor.conf.js``` add the code below after the: ```browserName: 'chrome',```
 
 ```chromeOptions: { args: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-extensions', '--disable-dev-shm-usage', '--window-size=1600,1020']}```
 
