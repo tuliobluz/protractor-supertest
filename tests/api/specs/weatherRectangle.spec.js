@@ -20,7 +20,6 @@ describe("/GET", function () {
                 res.body.list.should.to.be.an('array');
                 // First city on this rectangle
                 res.body.list[0].id.should.equal(bodies.cityRec1.id);
-                res.body.list[0].dt.should.equal(bodies.cityRec1.dt);
                 res.body.list[0].name.should.equal(bodies.cityRec1.name);
                 res.body.list[0].coord.Lat.should.equal(bodies.cityRec1Coord.Lat);
                 res.body.list[0].coord.Lon.should.equal(bodies.cityRec1Coord.Lon);
@@ -30,7 +29,6 @@ describe("/GET", function () {
                 res.body.list[0].clouds.should.to.be.an('object');
                 // Second city on this rectangle
                 res.body.list[1].id.should.equal(bodies.cityRec2.id);
-                res.body.list[1].dt.should.equal(bodies.cityRec2.dt);
                 res.body.list[1].name.should.equal(bodies.cityRec2.name);
                 res.body.list[1].coord.Lat.should.equal(bodies.cityRec2Coord.Lat);
                 res.body.list[1].coord.Lon.should.equal(bodies.cityRec2Coord.Lon);

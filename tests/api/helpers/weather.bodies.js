@@ -44,7 +44,6 @@ module.exports = {
     },
     cityRec1: {
         "id": 2208791,
-        "dt": 1541030539,
         "name": "Yafran",
     },
     cityRec1Coord: {
@@ -53,7 +52,6 @@ module.exports = {
     },
     cityRec2: {
         "id": 2208425,
-        "dt": 1541030539,
         "name": "Zuwarah",
     },
     cityRec2Coord: {
@@ -68,5 +66,44 @@ module.exports = {
         "message": "accurate",
         "cod": "200",
         "count": 10,
-    }
+    },
+    cityCyc1: {
+        "id": 495260,
+        "name": "Shcherbinka",
+    },
+    cityCyc1Coord: {
+        "lat": 55.4997,
+        "lon": 37.5597
+    },
+    cityCyc2: {
+        "id": 564517,
+        "name": "Dubrovitsy",
+    },
+    cityCyc2Coord: {
+        "lat": 55.4397,
+        "lon": 37.4867
+    },
+    cycleBad: {
+        "cod": "400",
+        "message": "555 is not a float"
+    },
+    several: {
+        "cnt": 3,
+    },
+    citySev1: {
+        "id": 524901,
+        "name": "Moscow"
+    },
+    citySev1Coord: {
+        "lon": 37.62,
+        "lat": 55.75
+    },
+    citySev2: {
+        "id": 703448,
+        "name": "Kiev"
+    },
+    citySev2Coord: {
+        "lon": -0.13,
+        "lat": 51.51
+    },
 };
