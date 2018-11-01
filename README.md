@@ -78,3 +78,4 @@ Open Weather API: http://openweathermap.org/current
 ### Running tests
 
 - Run the tests ```npm run api-test```
+- If the API is slowly you can run this command ```npm run api-test -- --timeout 10000```, to set a timeout to every test.
