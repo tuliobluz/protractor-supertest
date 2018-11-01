@@ -8,7 +8,7 @@ var should = chai.should();
 var server;
 
 describe("/GET", function () {
-    it("200 - the weather information to London - City Name", function (done) {
+    it("200 - the weather information by London - City Name", function (done) {
         server = supertest.agent(config.URLNameCity);
         server
             .get(config.URLNameCity + utils.apiID.id)
@@ -18,7 +18,8 @@ describe("/GET", function () {
                 res.body.id.should.equal(bodies.lodonCity.id);
                 res.body.name.should.equal(bodies.lodonCity.name);
                 res.body.cod.should.equal(bodies.lodonCity.cod);
-                res.body.coord.should.to.be.an('object');
+                res.body.coord.lon.should.equal(bodies.lodonCityCoord.lon);
+                res.body.coord.lat.should.equal(bodies.lodonCityCoord.lat);
                 res.body.weather.should.to.be.an('array');
                 res.body.main.should.to.be.an('object');
                 res.body.wind.should.to.be.an('object');
@@ -28,7 +29,7 @@ describe("/GET", function () {
             });
     });
 
-    it("200 - the weather information to London - City ID", function (done) {
+    it("200 - the weather information by London - City ID", function (done) {
         server = supertest.agent(config.URLNameCity);
         server
             .get(config.URLIdCity + utils.apiID.id)
@@ -38,7 +39,8 @@ describe("/GET", function () {
                 res.body.id.should.equal(bodies.lodonCity.id);
                 res.body.name.should.equal(bodies.lodonCity.name);
                 res.body.cod.should.equal(bodies.lodonCity.cod);
-                res.body.coord.should.to.be.an('object');
+                res.body.coord.lon.should.equal(bodies.lodonCityCoord.lon);
+                res.body.coord.lat.should.equal(bodies.lodonCityCoord.lat);
                 res.body.weather.should.to.be.an('array');
                 res.body.main.should.to.be.an('object');
                 res.body.wind.should.to.be.an('object');
@@ -48,7 +50,7 @@ describe("/GET", function () {
             });
     });
 
-    it("401 - Unauthorized to get city", function (done) {
+    it("401 - Unauthorized to get by city", function (done) {
         server = supertest.agent(config.URLNameCity);
         server
             .get(config.URLNameCity)
@@ -61,7 +63,7 @@ describe("/GET", function () {
             });
     });
 
-    it("404 - Not found city", function (done) {
+    it("404 - Not found to city", function (done) {
         server = supertest.agent(config.URLNameCityInvalid);
         server
             .get(config.URLNameCity + utils.apiID.id)

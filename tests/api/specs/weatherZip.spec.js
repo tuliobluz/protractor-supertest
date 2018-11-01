@@ -8,18 +8,18 @@ var should = chai.should();
 var server;
 
 describe("/GET", function () {
-    it("200 - the weather information by Geographic coordinates", function (done) {
-        server = supertest.agent(config.URLGeo);
+    it("200 - the weather information by Zip code - Default", function (done) {
+        server = supertest.agent(config.URLZipDefault);
         server
-            .get(config.URLGeo + utils.apiID.id)
+            .get(config.URLZipDefault + utils.apiID.id)
             .expect("Content-type", /json/)
             .end(function (err, res) {
                 res.status.should.equal(200);
-                res.body.id.should.equal(bodies.geoLocation.id);
-                res.body.name.should.equal(bodies.geoLocation.name);
-                res.body.cod.should.equal(bodies.geoLocation.cod);
-                res.body.coord.lon.should.equal(bodies.geoLocationCoord.lon);
-                res.body.coord.lat.should.equal(bodies.geoLocationCoord.lat);
+                res.body.id.should.equal(bodies.zipCode.id);
+                res.body.name.should.equal(bodies.zipCode.name);
+                res.body.cod.should.equal(bodies.zipCode.cod);
+                res.body.coord.lon.should.equal(bodies.zipCodeCoord.lon);
+                res.body.coord.lat.should.equal(bodies.zipCodeCoord.lat);
                 res.body.weather.should.to.be.an('array');
                 res.body.main.should.to.be.an('object');
                 res.body.wind.should.to.be.an('object');
@@ -29,10 +29,10 @@ describe("/GET", function () {
             });
     });
 
-    it("401 - Unauthorized to get weather by Geographic coordinates", function (done) {
-        server = supertest.agent(config.URLGeo);
+    it("401 - Unauthorized to get weather by Zip code", function (done) {
+        server = supertest.agent(config.URLZipDefault);
         server
-            .get(config.URLGeo)
+            .get(config.URLZipDefault)
             .expect("Content-type", /json/)
             .end(function (err, res) {
                 res.status.should.equal(401);
@@ -42,15 +42,15 @@ describe("/GET", function () {
             });
     });
 
-    it("400 - BadRequest to Geographic coordinates", function (done) {
-        server = supertest.agent(config.URLGeoBad);
+    it("404 - Not found to Zip code", function (done) {
+        server = supertest.agent(config.URLZipBad);
         server
-            .get(config.URLGeoBad + utils.apiID.id)
+            .get(config.URLZipBad + utils.apiID.id)
             .expect("Content-type", /json/)
             .end(function (err, res) {
-                res.status.should.equal(400);
-                res.body.cod.should.equal(bodies.badRequestGeo.cod);
-                res.body.message.should.equal(bodies.badRequestGeo.message);
+                res.status.should.equal(404);
+                res.body.cod.should.equal(bodies.notFoundCity.cod);
+                res.body.message.should.equal(bodies.notFoundCity.message);
                 done();
             });
     });

@@ -2,6 +2,11 @@
     "URLNameCity": "http://api.openweathermap.org/data/2.5/weather?q=London&",
     "URLIdCity": "http://api.openweathermap.org/data/2.5/weather?id=2172797&",
     "URLNameCityInvalid": "http://api.openweathermap.org/data/2.5/weather?q=Londan&",
-    "URLGeo":"http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&",
-    "URLGeoBad":"http://api.openweathermap.org/data/2.5/weather?lat=&lon=139&"
+    "URLGeo": "http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&",
+    "URLGeoBad": "http://api.openweathermap.org/data/2.5/weather?lat=&lon=139&",
+    "URLZipDefault": "http://api.openweathermap.org/data/2.5/weather?zip=94040&&",
+    "URLZipBad": "http://api.openweathermap.org/data/2.5/weather?zip=914040,us&&",
+    "URLRecCities": "http://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,10&",
+    "URLRecCitiesInvalid": "http://api.openweathermap.org/data/2.5/box/city?bbox=12,32,a,37,10&",
+    "URLCicle": "http://api.openweathermap.org/data/2.5/find?lat=55.5&lon=37.5&cnt=10&"
 }
