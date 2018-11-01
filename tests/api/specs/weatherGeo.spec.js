@@ -5,11 +5,10 @@ let utils = require('../helpers/utils.js');
 let bodies = require('../helpers/weather.bodies.js');
 var should = chai.should();
 
-var server;
+var server = supertest.agent(config.URLMain);
 
 describe("/GET", function () {
     it("200 - the weather information by Geographic coordinates", function (done) {
-        server = supertest.agent(config.URLGeo);
         server
             .get(config.URLGeo + utils.apiID.id)
             .expect("Content-type", /json/)
@@ -30,7 +29,6 @@ describe("/GET", function () {
     });
 
     it("401 - Unauthorized to get weather by Geographic coordinates", function (done) {
-        server = supertest.agent(config.URLGeo);
         server
             .get(config.URLGeo)
             .expect("Content-type", /json/)
@@ -43,7 +41,6 @@ describe("/GET", function () {
     });
 
     it("400 - BadRequest to Geographic coordinates", function (done) {
-        server = supertest.agent(config.URLGeoBad);
         server
             .get(config.URLGeoBad + utils.apiID.id)
             .expect("Content-type", /json/)

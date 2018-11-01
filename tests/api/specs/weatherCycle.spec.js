@@ -5,11 +5,10 @@ let utils = require('../helpers/utils.js');
 let bodies = require('../helpers/weather.bodies.js');
 var should = chai.should();
 
-var server;
+var server = supertest.agent(config.URLMain);
 
 describe("/GET", function () {
     it("200 - the weather information by Cycle", function (done) {
-        server = supertest.agent(config.URLCycle);
         server
             .get(config.URLCycle + utils.apiID.id)
             .expect("Content-type", /json/)
@@ -42,7 +41,6 @@ describe("/GET", function () {
     });
 
     it("401 - Unauthorized to get by Cycle", function (done) {
-        server = supertest.agent(config.URLCycle);
         server
             .get(config.URLCycle)
             .expect("Content-type", /json/)
@@ -55,7 +53,6 @@ describe("/GET", function () {
     });
 
     it("400 - Not found to Cycle", function (done) {
-        server = supertest.agent(config.URLCycleBad);
         server
             .get(config.URLCycleBad + utils.apiID.id)
             .expect("Content-type", /json/)

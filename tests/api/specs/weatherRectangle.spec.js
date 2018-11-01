@@ -5,11 +5,10 @@ let utils = require('../helpers/utils.js');
 let bodies = require('../helpers/weather.bodies.js');
 var should = chai.should();
 
-var server;
+var server = supertest.agent(config.URLMain);
 
 describe("/GET", function () {
     it("200 - the weather information by Rectanble", function (done) {
-        server = supertest.agent(config.URLRecCities);
         server
             .get(config.URLRecCities + utils.apiID.id)
             .expect("Content-type", /json/)
@@ -41,7 +40,6 @@ describe("/GET", function () {
     });
 
     it("401 - Unauthorized to get by Rectangle", function (done) {
-        server = supertest.agent(config.URLRecCities);
         server
             .get(config.URLRecCities)
             .expect("Content-type", /json/)
@@ -54,7 +52,6 @@ describe("/GET", function () {
     });
 
     it("400 - Not found to Rectangle", function (done) {
-        server = supertest.agent(config.URLRecCitiesInvalid);
         server
             .get(config.URLRecCitiesInvalid + utils.apiID.id)
             .expect("Content-type", /json/)

@@ -5,11 +5,10 @@ let utils = require('../helpers/utils.js');
 let bodies = require('../helpers/weather.bodies.js');
 var should = chai.should();
 
-var server;
+var server = supertest.agent(config.URLMain);
 
 describe("/GET", function () {
     it("200 - the weather information by Several Cities", function (done) {
-        server = supertest.agent(config.URLSeveral);
         server
             .get(config.URLSeveral + utils.apiID.id)
             .expect("Content-type", /json/)
@@ -40,7 +39,6 @@ describe("/GET", function () {
     });
 
     it("401 - Unauthorized to get by Several Cities", function (done) {
-        server = supertest.agent(config.URLSeveral);
         server
             .get(config.URLSeveral)
             .expect("Content-type", /json/)
@@ -53,7 +51,6 @@ describe("/GET", function () {
     });
 
     it("400 - Not found to Several Cities", function (done) {
-        server = supertest.agent(config.URLSeveralInvalid);
         server
             .get(config.URLSeveralInvalid + utils.apiID.id)
             .expect("Content-type", /json/)

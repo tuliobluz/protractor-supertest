@@ -5,11 +5,10 @@ let utils = require('../helpers/utils.js');
 let bodies = require('../helpers/weather.bodies.js');
 var should = chai.should();
 
-var server;
+var server = supertest.agent(config.URLMain);
 
 describe("/GET", function () {
     it("200 - the weather information by London - City Name", function (done) {
-        server = supertest.agent(config.URLNameCity);
         server
             .get(config.URLNameCity + utils.apiID.id)
             .expect("Content-type", /json/)
@@ -30,9 +29,8 @@ describe("/GET", function () {
     });
 
     it("200 - the weather information by London - City ID", function (done) {
-        server = supertest.agent(config.URLNameCity);
         server
-            .get(config.URLIdCity + utils.apiID.id)
+            .get(config.URLNameCity + utils.apiID.id)
             .expect("Content-type", /json/)
             .end(function (err, res) {
                 res.status.should.equal(200);
@@ -51,7 +49,6 @@ describe("/GET", function () {
     });
 
     it("401 - Unauthorized to get by city", function (done) {
-        server = supertest.agent(config.URLNameCity);
         server
             .get(config.URLNameCity)
             .expect("Content-type", /json/)
@@ -64,9 +61,8 @@ describe("/GET", function () {
     });
 
     it("404 - Not found to city", function (done) {
-        server = supertest.agent(config.URLNameCityInvalid);
         server
-            .get(config.URLNameCity + utils.apiID.id)
+            .get(config.URLNameCityInvalid + utils.apiID.id)
             .expect("Content-type", /json/)
             .end(function (err, res) {
                 res.status.should.equal(404);

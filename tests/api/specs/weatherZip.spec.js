@@ -5,11 +5,10 @@ let utils = require('../helpers/utils.js');
 let bodies = require('../helpers/weather.bodies.js');
 var should = chai.should();
 
-var server;
+var server = supertest.agent(config.URLMain);;
 
 describe("/GET", function () {
     it("200 - the weather information by Zip code - Default", function (done) {
-        server = supertest.agent(config.URLZipDefault);
         server
             .get(config.URLZipDefault + utils.apiID.id)
             .expect("Content-type", /json/)
@@ -30,7 +29,6 @@ describe("/GET", function () {
     });
 
     it("401 - Unauthorized to get weather by Zip code", function (done) {
-        server = supertest.agent(config.URLZipDefault);
         server
             .get(config.URLZipDefault)
             .expect("Content-type", /json/)
@@ -43,7 +41,6 @@ describe("/GET", function () {
     });
 
     it("404 - Not found to Zip code", function (done) {
-        server = supertest.agent(config.URLZipBad);
         server
             .get(config.URLZipBad + utils.apiID.id)
             .expect("Content-type", /json/)
